@@ -1,0 +1,32 @@
+server:
+  port: 8081
+management:
+  server:
+    port: 9001
+    ssl:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.60.0.77:3306/t1?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 123
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    database: 1
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 500
+
